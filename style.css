@@ -24,3 +24,6 @@ blockquote{background:var(--cream);border-left:3px solid var(--gold);margin:0;pa
 .day{break-before:page;border:none;padding:0}.intro{break-after:avoid}figure img{max-height:260px}.extra figure img{max-height:170px}.credits{break-before:page}th{-webkit-print-color-adjust:exact;print-color-adjust:exact}a{color:var(--ink)}}
 .proposed{display:inline-block;background:#c9a24a;color:#0f1f3d;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:4px;margin:.2rem 0 .5rem}
 .day.new{border-left:4px solid #c9a24a}
+
+.badge{display:inline-block;font-weight:700;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .5rem;border-radius:999px;margin:.25rem .3rem 0 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}.badge.booked{background:#2e7d4f;color:#fff}.badge.open{background:#e0a526;color:#1d1a10}.bnote{display:block;font-size:.68rem;font-weight:400;opacity:.8;margin-top:.15rem}.legend{margin:.3rem 0 1rem}.opts{margin-top:1rem}.opts td{vertical-align:top}
+.badge.alt{background:#5b6f8a;color:#fff}.day.alt{border:2px dashed #5b6f8a;background:#eef2f7}
