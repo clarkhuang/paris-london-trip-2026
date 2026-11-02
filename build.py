@@ -20,9 +20,9 @@ NEW=[
  ('Morning','Slow morning. ~11 AM timed entry to the '+L('Churchill War Rooms','https://www.iwm.org.uk/visits/churchill-war-rooms')+' (~1 hr 30; taxi ~15 min). Alternative: the '+L('Tower of London','https://www.hrp.org.uk/tower-of-london/')+' and the Crown Jewels. The Bayeux Tapestry at the British Museum (~15 min walk from the hotel) is sold out; worth checking for returns.'),
  ('Afternoon','Lunch near Westminster, then back to the hotel to rest.'),
  ('Evening','Taxi (~45 min) to '+L('Christmas at Kew','https://www.kew.org/kew-gardens/whats-on/christmas-at-kew')+' for an early-evening timed entry, the illuminated trail through the gardens (~1 hr 30, dress warm). Taxi back and a relaxed late dinner.')]),
-('dec9','Wed Dec 9','London at Christmas','Winter Wonderland at dusk.','mayfair',[
- ('Morning','Late breakfast. Wander Soho and Covent Garden, both on the hotel\'s doorstep (Covent Garden is ~7 min on foot).'),
- ('Afternoon','Afternoon tea or a long lunch. Rest and pack.'),
+('dec9','Wed Dec 9','London at Christmas','Tower Bridge and a riverside lunch, then Winter Wonderland at dusk.','mayfair',[
+ ('Morning','Late breakfast. ~10:30 AM taxi or Tube (~20 min) to the '+L('Tower Bridge Exhibition','https://www.towerbridge.org.uk/')+': the high-level walkways with the glass floor over the Thames, and the Victorian engine rooms (~1 hr 15; tickets not booked yet, buy online in advance).'),
+ ('Afternoon','~12:30 PM lunch at '+L('Coppa Club Tower Bridge','https://www.coppaclub.co.uk/tower')+', on the north bank just west of the bridge (Three Quays Walk, next to the Tower of London), with terrace views of Tower Bridge and The Shard. Open from 9 AM (Mon–Thu until 11 PM); lunch bowls and the all-day menu from 11:30 AM. The heated riverside '+L('igloos','https://www.coppaclub.co.uk/tower/igloos')+' must be booked ahead (not booked yet). Jenny: check the menu for fish and vegetarian dishes and flag the shellfish allergy. Then back to the hotel to rest and pack.'),
  ('Evening','Stroll into '+L('Hyde Park Winter Wonderland','https://www.hydeparkwinterwonderland.com')+' after dark (open Nov 19 – Jan 3). Farewell dinner; early night.')]),
 ('dec10','Thu Dec 10','Fly home from Heathrow','A relaxed last morning, then Polaris home.','heathrow',[
  ('Morning','Late breakfast and a slow pack. Leave the hotel at ~10:15 AM: 3-min walk to Leicester Square and the '+L('Piccadilly line','https://tfl.gov.uk/tube/route/piccadilly/')+' direct to Heathrow Terminals 2 &amp; 3 (~50 min), or a 10-min walk to Tottenham Court Road and the '+L('Elizabeth line','https://tfl.gov.uk/modes/elizabeth-line/')+' (~35 min), arriving ~11:15 for the 1:35 PM flight. With bags, a taxi (~1 hr) is the easy alternative.'),
@@ -58,10 +58,11 @@ OPEN=[('Mont-Saint-Michel hotel, Sat Dec 5','Option A: Le Relais Saint-Michel (o
 ('TGV, Sat Dec 5','TGV 8615 Paris-Montparnasse 10:57 AM → Rennes 12:25 PM.'),
 ('Ferry, Sun Dec 6','Brittany Ferries Caen-Ouistreham 4:30 PM → Portsmouth 9:30 PM (foot passengers, cabin).'),
 ('Train, Mon Dec 7','SWR Portsmouth Harbour 10:15 AM → London Waterloo 11:51 AM (SWR Sep 2026 timetable); trains about every 30 min as backup.'),
+('Tower Bridge + Coppa Club, Wed Dec 9','Tower Bridge Exhibition tickets (late morning), then lunch at Coppa Club Tower Bridge ~12:30 PM; book an igloo ahead if you want one.'),
 ('Paris activities and dinners','Moulin Rouge (decision due Sun Nov 1), Catacombs, Versailles, the Seine cruise and the Paris dinner tables.'),
 ('Airport transfers','CDG → hotel Nov 29; hotel → Heathrow Dec 10 (Tube or taxi on the day).'),
 ('Alternate: via Paris (Dec 6–7)','<span class="badge alt">Alternate – not chosen yet</span> Drive to Paris, one night there, Eurostar Dec 7. Replaces the ferry, Caen drop and Portsmouth night; see the alternate box.'),
-('London sights','Churchill War Rooms or Tower of London, Christmas at Kew (Tue Dec 8), Winter Wonderland (Wed Dec 9). Bayeux Tapestry at the British Museum is sold out (check for returns).')]
+('London sights','Churchill War Rooms or Tower of London, Christmas at Kew (Tue Dec 8), Tower Bridge Exhibition and Winter Wonderland (Wed Dec 9). Bayeux Tapestry at the British Museum is sold out (check for returns).')]
 op=''.join(f'<tr><td class="by">{OP} {a}</td><td>{b}</td></tr>' for a,b in OPEN)
 BKL=[('Flights out, Sat Nov 28','UA5867 Traverse City 2:18 PM → O\'Hare 2:55 PM (2C/2D); UA987 O\'Hare 6:45 PM → Paris CDG 9:55 AM Nov 29 (3D/3F).'),('Paris hotel, Nov 29 – Dec 5','Le Cinq Codet, 7th arrondissement.'),('London hotel, Dec 7 – 10','W London, 10 Wardour Street, Leicester Square, London W1D 6QF, Standard King (birthday noted, upgrade requested).'),('Birthday dinner, Mon Dec 7','Gymkhana, 42 Albemarle St, Mayfair, 9:15 PM (asked for earlier). Smart casual.'),('Flights home, Thu Dec 10','UA928 Heathrow T2 1:35 PM → O\'Hare 4:55 PM (4D/5F); UA2304 O\'Hare 7:45 PM → Traverse City 9:59 PM (First, 2E/2F).')]
 bk=''.join(f'<tr><td class="by">{BK} {a}</td><td>{b}</td></tr>' for a,b in BKL)
