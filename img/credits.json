@@ -71,12 +71,6 @@
   "artist": "BeBo86",
   "license": "CC BY-SA 4.0"
  },
- "bayeux": {
-  "title": "File:Bayeux Historic Centre.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Bayeux_Historic_Centre.jpg",
-  "artist": "Anton Bielousov",
-  "license": "CC BY-SA 3.0"
- },
  "stpancras": {
   "title": "File:St Pancras railway station MMB C0 373213.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:St_Pancras_railway_station_MMB_C0_373213.jpg",
@@ -101,10 +95,16 @@
   "artist": "Smuconlaw",
   "license": "CC BY-SA 4.0"
  },
- "omaha": {
-  "title": "File:2nd Infantry Division, E-1 draw, Easy Red sector, Omaha Beach, D+1, June 7, 1944.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:2nd_Infantry_Division,_E-1_draw,_Easy_Red_sector,_Omaha_Beach,_D%2B1,_June_7,_1944.jpg",
-  "artist": "US Army Signal Corps",
-  "license": "Public domain"
+ "rennes": {
+  "title": "File:2025-01-02 Regio 2N, Rennes (2).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:2025-01-02_Regio_2N,_Rennes_(2).jpg",
+  "artist": "RAIL P\u00a0(RAIL.PHOTOGRAPHY)",
+  "license": "CC0"
+ },
+ "msmcause": {
+  "title": "File:Bridge to Mont St Michel (3).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bridge_to_Mont_St_Michel_(3).jpg",
+  "artist": "Lynx1211",
+  "license": "CC BY-SA 4.0"
  }
 }
