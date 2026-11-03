@@ -11,7 +11,7 @@ NEW=[
 ('dec6','Sun Dec 6','The abbey, then back to Paris','Sleep in, the abbey late morning, and an evening train to Paris.','msmcause',[
  ('Morning','Breakfast with the view, then check out by 10 AM (bags in the car; pay parking at the machine when you leave). Shuttle across to the '+L('Mont-Saint-Michel Abbey','https://www.abbaye-mont-saint-michel.fr')+' ~10:00–12:30 (dress warm), then lunch in the village or back at the hotel.'),
  ('Afternoon','Drive back to Rennes at ~2:30 PM (~1 hr 10). Return the car at Sixt Rennes Gare before 5 PM, or use the 24-hour return: Sixt bays on level 7 of the Effia Gare Nord car park, keys in the key box. December daylight ends ~5 PM, so aim to be off the road by then.'),
- ('Evening','<strong>TGV</strong> Rennes ~4:30 PM → Paris-Montparnasse ~6 PM. Taxi (~25–30 min) to <a href="https://hotel-mademoiselle-paris.com/" target="_blank" rel="noopener">Hôtel Mademoiselle</a> for the night (chosen; not booked yet), a 4-star boutique hotel ~100 m (3–5 min walk) from Gare du Nord, so the Eurostar is a short walk. Backup: <a href="https://www.whistlerparis.com/en/" target="_blank" rel="noopener">Hôtel Whistler</a>, also by Gare du Nord. Easy dinner nearby and an early night.')]),
+ ('Evening','<strong>TGV</strong> Rennes ~4:30 PM → Paris-Montparnasse ~6 PM. Taxi (~25–30 min) to <a href="https://hotel-mademoiselle-paris.com/" target="_blank" rel="noopener">Hôtel Mademoiselle</a> for the night (<strong>booked</strong>: Allure Deluxe king, breakfast included, ~€170 estimate paid at the hotel), a 4-star boutique hotel ~100 m (3–5 min walk) from Gare du Nord, so the 11:59 Eurostar is a short walk. Arrival ~7 PM noted; a quiet courtyard-side room requested. Free spa access until 10:30 AM. Flexible: free cancellation until 11:59 PM Paris time on Fri Dec 4. Easy dinner nearby and an early night.')]),
 ('dec7','Mon Dec 7','Birthday · Paris → London','A relaxed morning, the Eurostar, then the birthday dinner.','london',[
  ('Morning','Relaxed breakfast at Hôtel Mademoiselle. ~10:45 walk with the bags to Paris Gare du Nord (3–5 min; no taxi needed). <strong>'+L('Eurostar','https://www.eurostar.com')+' 9027</strong> Paris Gare du Nord 11:59 AM → London St Pancras 1:35 PM London time (backup: 10:57 → 12:30). Times from the regular timetable; confirm when booking. Allow time for check-in and passport control before departure.'),
  ('Afternoon','Taxi from St Pancras to '+L('W London','https://www.marriott.com/en-us/hotels/lonhw-w-london/overview/')+' at 10 Wardour Street, Leicester Square (~15–20 min). Booked: Standard King; birthday noted and an upgrade requested. Check-in is 3 PM, so drop bags and have a late lunch in Soho or Chinatown (a 2–5 min walk), then rest. Leicester Square and Piccadilly Circus Tube stations are each ~3 min away. Time to dress for dinner.'),
@@ -39,7 +39,7 @@ EXTRA={'nov30':'<figure><img src="img/sacre.jpg" alt="Sacré-Cœur"><figcaption>
 EXTRA['dec5']=EXTRA.get('dec5','')
 BK='<span class="badge booked">Booked</span>'; OP='<span class="badge open">Open</span>'
 BOOKED={('nov28','Afternoon'),('nov28','Evening'),('dec7','Evening'),('dec10','Afternoon'),('dec10','Evening')}
-SNOTE={('nov29','Afternoon'):'Le Cinq Codet booked; activities open',('dec5','Morning'):'Le Cinq Codet checkout booked; TGV open',('dec5','Afternoon'):'Relais booked; car open',('dec7','Afternoon'):'W London booked; taxi open',('dec10','Morning'):'W London booked; transfer open'}
+SNOTE={('nov29','Afternoon'):'Le Cinq Codet booked; activities open',('dec5','Morning'):'Le Cinq Codet checkout booked; TGV open',('dec5','Afternoon'):'Relais booked; car open',('dec6','Evening'):'Mademoiselle booked; TGV open',('dec7','Afternoon'):'W London booked; taxi open',('dec10','Morning'):'W London booked; transfer open'}
 def bdg(d,t):
   b=BK if (d,t) in BOOKED else OP
   n=SNOTE.get((d,t))
@@ -53,7 +53,6 @@ for i,(id_,date,title,anchor,img,rows) in enumerate(ALL):
 OPEN=[('TGV Paris → Rennes, Sat Dec 5','~noon from Montparnasse, ~1 hr 25 (confirm the exact train when booking).'),
 ('Sixt car, Rennes Gare, Dec 5 – 6','Pick up Sat 2 PM (desk reopens after lunch), return Sun before 5 PM or via the 24-hour key box (Effia Gare Nord car park, level 7). Round trip, same station.'),
 ('TGV Rennes → Paris, Sun Dec 6','~4:30 PM, arriving Montparnasse ~6 PM.'),
-('Paris hotel, Sun Dec 6','Hôtel Mademoiselle (chosen), ~100 m from Gare du Nord; backup Hôtel Whistler.'),
 ('Eurostar, Mon Dec 7','Eurostar 9027 Paris Gare du Nord 11:59 AM → London St Pancras 1:35 PM (backup 10:57 → 12:30).'),
 ('Tower Bridge + Coppa Club, Wed Dec 9','Tower Bridge Exhibition tickets (late morning), then lunch at Coppa Club Tower Bridge ~12:30 PM; book an igloo ahead if you want one.'),
 ('Paris activities and dinners','Moulin Rouge (decision due Sun Nov 1), Catacombs, Versailles, the Seine cruise and the Paris dinner tables.'),
@@ -61,6 +60,7 @@ OPEN=[('TGV Paris → Rennes, Sat Dec 5','~noon from Montparnasse, ~1 hr 25 (con
 ('London sights','Churchill War Rooms or Tower of London, Christmas at Kew (Tue Dec 8), Tower Bridge Exhibition and Winter Wonderland (Wed Dec 9). Bayeux Tapestry at the British Museum is sold out (check for returns).')]
 op=''.join(f'<tr><td class="by">{OP} {a}</td><td>{b}</td></tr>' for a,b in OPEN)
 BKL=[('Flights out, Sat Nov 28','UA5867 Traverse City 2:18 PM → O\'Hare 2:55 PM (2C/2D); UA987 O\'Hare 6:45 PM → Paris CDG 9:55 AM Nov 29 (3D/3F).'),('Paris hotel, Nov 29 – Dec 5','Le Cinq Codet, 7th arrondissement.'),('Mont-Saint-Michel hotel, Sat Dec 5','Le Relais Saint-Michel, Signature room with terrace and Mount view, breakfast included. Flexible: free cancellation before Nov 25. Check-in from 4 PM, check-out by 10 AM. Call ahead for the access-road code.'),
+('Paris hotel, Sun Dec 6','Hôtel Mademoiselle, Paris 10e, ~100 m from Gare du Nord. Allure Deluxe king, breakfast and spa access (until 10:30 AM) included; pay at the hotel (~€170 estimate). Flexible: free cancellation until 11:59 PM Paris time Dec 4.'),
 ('London hotel, Dec 7 – 10','W London, 10 Wardour Street, Leicester Square, London W1D 6QF, Standard King (birthday noted, upgrade requested).'),('Birthday dinner, Mon Dec 7','Gymkhana, 42 Albemarle St, Mayfair, 9:15 PM (asked for earlier). Smart casual.'),('Flights home, Thu Dec 10','UA928 Heathrow T2 1:35 PM → O\'Hare 4:55 PM (4D/5F); UA2304 O\'Hare 7:45 PM → Traverse City 9:59 PM (First, 2E/2F).')]
 bk=''.join(f'<tr><td class="by">{BK} {a}</td><td>{b}</td></tr>' for a,b in BKL)
 cred=''.join(f'<li>{k}: <a href="{v["page"]}">{html.escape(v["title"][5:])}</a> — {html.escape(v["artist"]) or "Wikimedia Commons"}, {v["license"]}</li>' for k,v in C.items() if not k.startswith('site_'))
