@@ -21,7 +21,7 @@ blockquote{background:var(--cream);border-left:3px solid var(--gold);margin:0;pa
 .credits{font-size:.8rem}footer{background:var(--navy);color:var(--gold);text-align:center;padding:1.2rem;font-family:Georgia,serif}
 @media(max-width:600px){th{width:5.5rem;padding:.5rem}td{padding:.5rem}.hero h1{font-size:2rem}}
 @media print{nav.days,.pdf{display:none}body{background:#fff;font-size:11pt}.hero{padding:2.5rem 1rem;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.day{break-before:page;border:none;padding:0}.intro{break-after:avoid}figure img{max-height:260px}.extra figure img{max-height:170px}.credits{break-before:page}th{-webkit-print-color-adjust:exact;print-color-adjust:exact}a{color:var(--ink)}}
+.day{break-before:page;border:none;padding:0}.intro{break-after:avoid}figure img{max-height:260px}.day:has(.opts) figure.lead img{max-height:170px}.extra figure img{max-height:170px}.opts{break-inside:avoid}.credits{break-before:page}th{-webkit-print-color-adjust:exact;print-color-adjust:exact}a{color:var(--ink)}}
 .proposed{display:inline-block;background:#c9a24a;color:#0f1f3d;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:4px;margin:.2rem 0 .5rem}
 .day.new{border-left:4px solid #c9a24a}
 

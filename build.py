@@ -38,21 +38,25 @@ EXTRA={'nov30':'<figure><img src="img/sacre.jpg" alt="Sacré-Cœur"><figcaption>
 'dec6':'<figure><img src="img/rennes.jpg" alt="Rennes station"><figcaption>A train at Rennes station, where the car is picked up and returned</figcaption></figure>'}
 EXTRA['dec5']=EXTRA.get('dec5','')
 BK='<span class="badge booked">Booked</span>'; OP='<span class="badge open">Open</span>'
-BOOKED={('dec5','Afternoon'),('dec6','Afternoon'),('dec7','Morning'),('dec5','Morning'),('dec6','Evening'),('nov28','Afternoon'),('nov28','Evening'),('dec7','Evening'),('dec10','Afternoon'),('dec10','Evening')}
-SNOTE={('nov29','Afternoon'):'Le Cinq Codet booked; activities open',('dec5','Morning'):'Le Cinq Codet + TGV booked; taxi open',('dec5','Afternoon'):'Relais + car booked',('dec6','Evening'):'TGV + Mademoiselle booked; taxi open',('dec7','Afternoon'):'W London booked; taxi open',('dec10','Morning'):'W London booked; transfer open'}
+BOOKED={('dec5','Afternoon'),('dec6','Afternoon'),('dec7','Morning'),('dec5','Morning'),('dec6','Evening'),('nov28','Afternoon'),('nov28','Evening'),('nov30','Evening'),('dec7','Evening'),('dec10','Afternoon'),('dec10','Evening')}
+SNOTE={('nov29','Afternoon'):'Le Cinq Codet booked; activities open',('nov30','Evening'):'Dinner &amp; show confirmed',('dec5','Morning'):'Le Cinq Codet + TGV booked; taxi open',('dec5','Afternoon'):'Relais + car booked',('dec6','Evening'):'TGV + Mademoiselle booked; taxi open',('dec7','Afternoon'):'W London booked; taxi open',('dec10','Morning'):'W London booked; transfer open'}
 def bdg(d,t):
   b=BK if (d,t) in BOOKED else OP
   n=SNOTE.get((d,t))
   return b+(f'<span class="bnote">{n}</span>' if n else '')
+OPT_LOUVRE='<div class="opts"><h3>Louvre: two options — pick one day '+OP+'</h3><table class="chk"><tr><th>Option A: Thu Dec 3, 11:00 AM</th><th>Option B: Fri Dec 4, 11:00 AM</th></tr><tr><td>Timed entry (~2–2.5 hrs), then lunch nearby (~1:30 PM) and back to the hotel to rest. Leave 4:35 for the 5 PM Seine cruise (unchanged).</td><td>Timed entry (~2–2.5 hrs), then lunch nearby. Afternoon spa and packing, and the 7 PM farewell dinner at '+L('La Fontaine de Mars','https://www.fontaine-de-mars.com')+', stay as planned.</td></tr></table><p>Official tickets at '+L('ticket.louvre.fr','https://ticket.louvre.fr/en')+'. Timed entry required; tickets are non-refundable and non-exchangeable. €32 per adult (€64 for two). Book as soon as your date opens (~Nov 14–15), and no later than ~Nov 20 — 11 AM slots can sell out. Thursday hours 9 AM–6 PM; Friday until 9 PM; closed Tuesdays. Decide Thursday vs Friday first.</p></div>'
+
 days=''
 for i,(id_,date,title,anchor,img,rows) in enumerate(ALL):
   new=id_ in [d[0] for d in NEW]
   ban=''
   tr=''.join(f'<tr><th>{t}<br>{bdg(id_,t)}</th><td>{v}</td></tr>' for t,v in rows)
-  days+=f'<section class="day{" new" if new else ""}" id="{id_}"><div class="dhead"><span class="num">Day {i}</span>{ban}<h2>{date} · {title}</h2><p class="anchor">Anchor: {anchor}</p></div><figure class="lead"><img src="img/{img}.jpg" alt="{title}"></figure><table>{tr}</table><div class="extra">{EXTRA.get(id_,"")}</div></section>'
+  extra=(OPT_LOUVRE if id_ in ('dec3','dec4') else '')+EXTRA.get(id_,"")
+  days+=f'<section class="day{" new" if new else ""}" id="{id_}"><div class="dhead"><span class="num">Day {i}</span>{ban}<h2>{date} · {title}</h2><p class="anchor">Anchor: {anchor}</p></div><figure class="lead"><img src="img/{img}.jpg" alt="{title}"></figure><table>{tr}</table><div class="extra">{extra}</div></section>'
 OPEN=[
+('Louvre, Thu Dec 3 or Fri Dec 4','Pick one day. 11:00 AM timed entry; official tickets at '+L('ticket.louvre.fr','https://ticket.louvre.fr/en')+'. Timed entry required; tickets are non-refundable and non-exchangeable. €32 per adult (€64 for two). Dates go on sale about 19–20 days ahead, so book as soon as your date opens (~Nov 14–15) and no later than ~Nov 20 — 11 AM slots can sell out. Thursday hours 9 AM–6 PM; Friday until 9 PM; closed Tuesdays. Decide Thursday vs Friday first.'),
 ('Tower Bridge + Coppa Club, Wed Dec 9','Tower Bridge Exhibition tickets (late morning), then lunch at Coppa Club Tower Bridge ~12:30 PM; book an igloo ahead if you want one.'),
-('Paris activities and dinners','Moulin Rouge (decision due Sun Nov 1), Catacombs, Versailles, the Seine cruise and the Paris dinner tables.'),
+('Paris activities and dinners','Catacombs, Versailles, the Seine cruise and the other Paris dinner tables.'),
 ('Airport transfers','CDG → hotel Nov 29; hotel → Heathrow Dec 10 (Tube or taxi on the day).'),
 ('London sights','Churchill War Rooms or Tower of London, Christmas at Kew (Tue Dec 8), Tower Bridge Exhibition and Winter Wonderland (Wed Dec 9). Bayeux Tapestry at the British Museum is sold out (check for returns).')]
 op=''.join(f'<tr><td class="by">{OP} {a}</td><td>{b}</td></tr>' for a,b in OPEN)
@@ -61,7 +65,7 @@ BKL=[('Flights out, Sat Nov 28','UA5867 Traverse City 2:18 PM → O\'Hare 2:55 P
 ('Eurostar, Mon Dec 7','Eurostar 9027 Paris Gare du Nord 12:08 PM → London St Pancras 1:30 PM, Eurostar Plus, seats together, ~$500 for two (estimate). Tickets in the Eurostar app after both enter passport details (Advance Passenger Information). Free change up to 1 hour before.'),
 ('Sixt car, Rennes station, Dec 5 – 6','VW T-Roc automatic or similar, ~€115 estimate, paid at pickup. Pick up Sat 2:30 PM at the station desk; return Sun 3:30 PM to level 7 of the Effia Gare Nord car park (key box after hours). Free cancellation until pickup.'),
 ('Paris hotel, Sun Dec 6','Hôtel Mademoiselle, Paris 10e, ~100 m from Gare du Nord. Allure Deluxe king, breakfast and spa access (until 10:30 AM) included; pay at the hotel (~€170 estimate). Flexible: free cancellation until 11:59 PM Paris time Dec 4.'),
-('London hotel, Dec 7 – 10','W London, 10 Wardour Street, Leicester Square, London W1D 6QF, Standard King (birthday noted, upgrade requested).'),('Birthday dinner, Mon Dec 7','Gymkhana, 42 Albemarle St, Mayfair, 9:15 PM (asked for earlier). Smart casual.'),('Flights home, Thu Dec 10','UA928 Heathrow T2 1:35 PM → O\'Hare 4:55 PM (4D/5F); UA2304 O\'Hare 7:45 PM → Traverse City 9:59 PM (First, 2E/2F).')]
+('London hotel, Dec 7 – 10','W London, 10 Wardour Street, Leicester Square, London W1D 6QF, Standard King (birthday noted, upgrade requested).'),('Birthday dinner, Mon Dec 7','Gymkhana, 42 Albemarle St, Mayfair, 9:15 PM (asked for earlier). Smart casual.'),('Moulin Rouge, Mon Nov 30','Dinner &amp; Show: doors 6:45 PM, dinner 7 PM, Féerie 9 PM. Clark: Toulouse-Lautrec; Jenny: vegan. Half a bottle of Champagne per person. Tickets via the confirmation email (PDF or mobile wallet); seating allocated on arrival.'),('Flights home, Thu Dec 10','UA928 Heathrow T2 1:35 PM → O\'Hare 4:55 PM (4D/5F); UA2304 O\'Hare 7:45 PM → Traverse City 9:59 PM (First, 2E/2F).')]
 bk=''.join(f'<tr><td class="by">{BK} {a}</td><td>{b}</td></tr>' for a,b in BKL)
 cred=''.join(f'<li>{k}: <a href="{v["page"]}">{html.escape(v["title"][5:])}</a> — {html.escape(v["artist"]) or "Wikimedia Commons"}, {v["license"]}</li>' for k,v in C.items() if not k.startswith('site_'))
 cred+='<li>Restaurant images are screenshots of each venue\'s own website.</li>'
